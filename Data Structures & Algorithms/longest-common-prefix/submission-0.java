@@ -1,0 +1,17 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        // sort the strings && check first and last only
+        Arrays.sort(strs);  // TC --> O(n log n)
+        String first = strs[0];
+        String last = strs[strs.length-1];
+        int i =0;
+        while(i<first.length() && i < last.length()){
+            if(first.charAt(i) != last.charAt(i)){
+                break;
+            }
+            i++;
+        }
+        return last.substring(0,i);
+
+    }
+}
